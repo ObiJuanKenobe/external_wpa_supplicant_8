@@ -331,20 +331,6 @@ int wpa_supplicant_scard_init(struct wpa_supplicant *wpa_s,
 	return 0;
 }
 
-
-static int has_wep_key(struct wpa_ssid *ssid)
-{
-	int i;
-
-	for (i = 0; i < NUM_WEP_KEYS; i++) {
-		if (ssid->wep_key_len[i])
-			return 1;
-	}
-
-	return 0;
-}
-
-
 #ifndef CONFIG_NO_SCAN_PROCESSING
 
 static int has_wep_key(struct wpa_ssid *ssid)
